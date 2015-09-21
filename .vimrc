@@ -17,6 +17,8 @@ Bundle 'leshill/vim-json'
 Bundle 'pangloss/vim-javascript'
 " vim indents HTML very poorly on it's own. This fixes a lot of that.
 Bundle 'indenthtml.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdtree'
 
 call vundle#end()            " required
 
@@ -24,10 +26,16 @@ set ruler
 set number
 set mouse=a
 
+" NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+
 " We have to turn this stuff back on if we want all of our features.
 filetype plugin indent on " Filetype auto-detection
 syntax on " Syntax highlighting
 
+set nowrap
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
