@@ -19,6 +19,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'indenthtml.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()            " required
 
@@ -30,6 +31,7 @@ set mouse=a
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowBookmarks=1 " Start with bookmarks open
 
 " We have to turn this stuff back on if we want all of our features.
 filetype plugin indent on " Filetype auto-detection
