@@ -47,6 +47,24 @@ set shiftround " tab / shifting moves to closest tabstop.
 set autoindent " Match indents on new lines.
 set smartindent " Intellegently dedent / indent new lines based on rules.
 
+" Ctr - S Mapping
+command -nargs=0 -bar Update if &modified 
+                           \|    if empty(bufname('%'))
+                           \|        browse confirm write
+                           \|    else
+                           \|        confirm write
+                           \|    endif
+                           \|endif
+nnoremap <silent> <C-S> :<C-u>Update<CR>
+inoremap <c-s> <Esc>:Update<CR>
+inoremap <c-s> <c-o>:Update<CR>
+
+" Allow us to use Ctrl-s and Ctrl-q as keybinds
+silent !stty -ixon
+"
+" Restore default behaviour when leaving Vim.
+autocmd VimLeave * silent !stty ixon
+
 " we don't have to press shift when we want to get into command mode.
 nnoremap ; :
 vnoremap ; :
