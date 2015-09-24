@@ -47,6 +47,13 @@ set shiftround " tab / shifting moves to closest tabstop.
 set autoindent " Match indents on new lines.
 set smartindent " Intellegently dedent / indent new lines based on rules.
 
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set title                " change the terminal's title
+set visualbell           " don't beep
+set noerrorbells         " don't beep
+
 " Ctr - S Mapping
 command -nargs=0 -bar Update if &modified 
                            \|    if empty(bufname('%'))
@@ -64,6 +71,11 @@ silent !stty -ixon
 "
 " Restore default behaviour when leaving Vim.
 autocmd VimLeave * silent !stty ixon
+
+" for command mode
+nnoremap <S-Tab> <<
+" for insert mode
+inoremap <S-Tab> <C-d>
 
 " we don't have to press shift when we want to get into command mode.
 nnoremap ; :
