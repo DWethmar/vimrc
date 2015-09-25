@@ -72,6 +72,7 @@ silent !stty -ixon
 " Restore default behaviour when leaving Vim.
 autocmd VimLeave * silent !stty ixon
 
+" TABS
 " for command mode
 nnoremap <S-Tab> <<
 " for insert mode
@@ -82,3 +83,4 @@ nnoremap ; :
 vnoremap ; :
 
 set background=dark
+colorscheme gruvbox
