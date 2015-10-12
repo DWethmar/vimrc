@@ -1,0 +1,14 @@
+echo "-------------------------------------------------"
+echo "| Setup VIM for Dennis Wethmar!                 |"
+echo "| denniswethmar@gmail.com                       |"
+echo "-------------------------------------------------"
+echo "Make sure to clone in Home (~)"
+
+ln -s -f -v ~/vimrc/.vimrc ~/.vimrc
+
+echo "Install plugins"
+
+vim +PluginInstall +qall
+vim +PluginUpdate +qall
+
+echo "done!"
