@@ -57,15 +57,15 @@ set noerrorbells         " don't beep
 
 " Ctr - S Mapping
 command -nargs=0 -bar Update if &modified 
-                           \|    if empty(bufname('%'))
-                           \|        browse confirm write
-                           \|    else
-                           \|        confirm write
-                           \|    endif
-                           \|endif
+            \|    if empty(bufname('%'))
+                \|        browse confirm write
+                \|    else
+                    \|        confirm write
+                    \|    endif
+                    \|endif
 nnoremap <silent> <C-S> :<C-u>Update<CR>
 inoremap <c-s> <Esc>:Update<CR>
-inoremap <c-s> <c-o>:Update<CR>
+inoremap <c-s> <c-o>:Update<CR><Esc>
 
 " Allow us to use Ctrl-s and Ctrl-q as keybinds
 silent !stty -ixon
