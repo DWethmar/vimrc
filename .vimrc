@@ -20,6 +20,7 @@ Bundle 'indenthtml.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
+Plugin 'Chiel92/vim-autoformat' " Handige autoformater, binden we zo later mooi aan F3
 
 call vundle#end()            " required
 
@@ -81,6 +82,8 @@ inoremap <S-Tab> <C-d>
 " we don't have to press shift when we want to get into command mode.
 nnoremap ; :
 vnoremap ; :
+
+noremap <F3> :Autoformat<CR>
 
 set background=dark
 colorscheme gruvbox
