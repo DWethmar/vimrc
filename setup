@@ -4,6 +4,8 @@ echo "| denniswethmar@gmail.com                       |"
 echo "-------------------------------------------------"
 echo "Make sure to clone in Home (~)"
 
+git clone https://github/VundleVim.vim.git ~/.vim/bundle/Vundle.vim
+
 ln -s -f -v ~/vimrc/.vimrc ~/.vimrc
 
 echo "Install plugins"
