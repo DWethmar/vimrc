@@ -55,6 +55,11 @@ set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " don't beep
 
+"Tag dinges
+" generate tags file %ctags -R
+set autochdir
+set tags+=./tags;
+
 " Ctr - S Mapping
 command -nargs=0 -bar Update if &modified 
             \|    if empty(bufname('%'))
