@@ -34,6 +34,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowBookmarks=1 " Start with bookmarks open
 
+" Close nerd tree if the only windos is nerdtree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 " We have to turn this stuff back on if we want all of our features.
 filetype plugin indent on " Filetype auto-detection
 syntax on " Syntax highlighting
@@ -54,6 +57,9 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " don't beep
+
+" Create swap files in the tmp folder
+set dir=/tmp
 
 "Tag dinges
 " generate tags file %ctags -R
